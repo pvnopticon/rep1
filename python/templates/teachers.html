@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы английского языка</title>
+</head>
+<form action="/service" method="get">
+		<input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Назад">
+	</form>
+<body bgcolor="#141019">
+<div style="text-align: center">
+  {% for teacher in teachers %}
+    <p><b>
+      {{teacher.name}}
+      {{teacher.surname}}
+    </b>
+    </p>
+    <p><em>
+      Преподавательский стаж: {{teacher.teaching_exp}} года
+      </em>
+    </p>
+    <p><em>
+      Опыт в среде: {{teacher.vocal_exp}} лет
+    </em>
+    </p>
+    <p><em>
+      Образование: {{teacher.education}}
+    </em>
+    </p>
+    <p>
+      {{teacher.description}}
+    </p>
+    <p>
+      ------------------------
+    </p>
+  {% endfor %}
+</div>
+</body>
+<form action="/get-teachers" method="get">
+    <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Загрузить в xlsx">
+</form>
+<form action="/get-teachers-json" method="get">
+    <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Загрузить в json">
+</form>
+</html>

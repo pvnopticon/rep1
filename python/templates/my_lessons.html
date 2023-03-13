@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Курсы английского языка</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action="/service" method="get">
+		<input type="submit" value="Назад">
+	</form>
+<body bgcolor="#141019">
+<div style="text-align: center">
+  {% for lesson in lessons %}
+     <p><b>
+      Дата: {{lesson.timetable.date_}}
+      Время: {{lesson.timetable.time_}}
+      </b>
+      Преподаватель: {{lesson.timetable.teacher.name}}
+      {{lesson.timetable.teacher.surname}}
+      Тип: {{lesson.timetable.type}}
+      Кабинет: {{lesson.timetable.cabinet.number}}
+      Корпус: {{lesson.timetable.cabinet.building}}
+    </p>
+    <p>
+      ------------------------
+    </p>
+  {% endfor %}
+</div>
+</body>
+</html>

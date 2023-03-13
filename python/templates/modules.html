@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Курсы английского языка"</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action="/service" method="get">
+    <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Назад">
+</form>
+<body bgcolor="#141019">
+<div style="text-align: center">
+    {% for module in modules %}
+    <p><b>
+        {{module.name}}
+    </b>
+    <p><em>
+        Количество занятий: {{module.quantity}}
+    </em>
+    </p>
+    <p><em>
+        Стоимость: {{module.price}} Р
+    </em>
+    </p>
+    <p>
+        {{module.pg_description}}
+    </p>
+    <p>
+    <form action="/buy-module" method="post">
+        <input type="hidden" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" value={{module.id}} name="id">
+        <input type="hidden" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" value={{module.quantity}} name="quantity">
+        <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Купить">
+
+    </form>
+    </p>
+    <p>
+        ------------------------
+    </p>
+    {% endfor %}
+</div>
+<form action="/get-modules" method="get">
+    <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Загрузить в xlsx">
+</form>
+<form action="/get-modules-json" method="get">
+    <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Загрузить в json">
+</form>
+</body>
+</html>

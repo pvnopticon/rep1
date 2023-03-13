@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Курсы английского языка</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<form action="/service" method="get">
+		<input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Назад">
+	</form>
+<body bgcolor="#141019">
+<div style="text-align: center">
+  {% for module in modules %}
+    <p><b>
+      {{module.module.name}}
+    </b>
+    <p><em>
+      Осталось занятий: {{module.quantity}}
+    </em>
+    </p>
+    <p>
+      ------------------------
+    </p>
+  {% endfor %}
+</div>
+</body>
+</html>

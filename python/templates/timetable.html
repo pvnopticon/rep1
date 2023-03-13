@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Курсы английского языка</title>
+</head>
+<form action="/service" method="get">
+		<input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Назад">
+	</form>
+<body bgcolor="#141019">
+<div style="text-align: center">
+  {% for tmp in timetable %}
+    <p><b>
+      Дата: {{tmp.date_}}
+      Время: {{tmp.time_}}
+      </b>
+      Преподаватель: {{tmp.teacher.name_}}
+      {{tmp.teacher.surname}}
+      Аудитория: {{tmp.auditorium.number}}
+      Корпус: {{tmp.auditorium.building}}
+      <form action="/sign-up-lesson" method="post">
+        <select name="id_module">
+          {% for module in modules %}
+            <option value={{module.module.id}}>{{module.module.name}}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" value={{tmp.id}} name="id_lesson">
+		<input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Записаться">
+	</form>
+    </p>
+    <p>
+      ------------------------
+    </p>
+  {% endfor %}
+</div>
+</body>
+</html>

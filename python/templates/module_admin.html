@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<title>Курсы английского языка</title>
+		<meta charset="utf-8">
+	</HEAD>
+	<form action="/service-admin" method="get">
+		<input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Назад">
+	</form>
+
+	<BODY bgcolor="#141019">
+	<div style="text-align: center; font-family: Sans Serif; color:#E5E4E2;">
+			<h1>Курсы английского языка</h1>
+		<h2>Добавить модуль</h2>
+		<form action="/module-admin-add" method="post" content="application/json">
+        <input type="text" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" name="name" placeholder="Название"/><br>
+			<input type="text" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" name="pg_description" placeholder="Описание"/><br>
+            <input type="text" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" name="quantity" placeholder="Количество занятий"/><br>
+            <input type="text" style="height: 30px; width: 150px; background-color:#141019; border:none; color:#E5E4E2" name="price" placeholder="Стоимость"/><br>
+            <input type="submit" style="height: 35px; width: 150px; background-color:#9984ae; border:none; color:#E5E4E2" value="Создать">
+    	</form>
+    </div>
+
+	</BODY>
+</HTML>
